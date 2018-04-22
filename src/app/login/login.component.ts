@@ -7,5 +7,12 @@ import { Component } from '@angular/core';
 })
 
 export class LoginComponent {
+    email
+    password
+
+    print() {
+        console.log(this.email)
+        console.log(this.password)
+    }
 
 }

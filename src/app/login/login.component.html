@@ -1,9 +1,10 @@
 
 <h3>Username</h3>
-<input type="text" name="username" value="mickey">
+<input type="text" name="username" [(ngModel)]="email">
 <br>
 <h3>password</h3>
-<input type="text" name="lastname" value="mouse">
+<input type="text" name="lastname" [(ngModel)]="password">
 <br>
 <button>Log-in</button>
 <button>Register</button>
+<button (click)="print()">print</button>{{email}} {{password}}
