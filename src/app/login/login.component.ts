@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {LoginService} from './login.service';
 
 @Component({
   selector: 'login-root',
@@ -10,8 +11,13 @@ export class LoginComponent {
     email
     password
 
+    constructor(private loginService: LoginService){
+
+    }
+
     loginclick(){
         console.log("this is your email" + this.email)
+        this.loginService.checklogin(this.email, this.password)
     }
 
     registerclick(){
