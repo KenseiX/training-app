@@ -7,12 +7,15 @@ export class RegistrationService{
     dummyemail = "test@email.com"
     dummypassword = "testpass"
 
-    checklogin (email, password){
-        if (email === this.dummyemail && password === this.dummypassword){
-            console.log ("valid login hit")
+    checklogin (email){
+        if (email === this.dummyemail){
+            console.log ("invalid email hit (use different email)")
         }
         else
-        console.log ("invalid login hit")
+        console.log ("email not in use hit")
     }
 
+    checkpassword(password){
+
+    }
 }

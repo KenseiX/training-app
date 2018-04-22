@@ -1,5 +1,5 @@
 <h3>Enter Email</h3>
-<input type="text" name="enteremail">
+<input type="text" name="enteremail" [(ngModel)]="email">
 <br>
 <h3>First Name</h3>
 <input type="text" name="firstname">
@@ -8,10 +8,10 @@
 <input type="text" name="lastname">
 <br>
 <h3>Enter Password</h3>
-<input type="text" name="enterpassword">
+<input type="text" name="enterpassword"[(ngModel)]="password">
 <br>
 <h3>Confirm Password</h3>
-<input type="text" name="confirmpassword">
+<input type="text" name="confirmpassword"[(ngModel)]="confirmpassword">
 <br>
-<button>Confirm</button>
+<button (click)="confirmclick()">Confirm</button>
 <button>Cancel</button>

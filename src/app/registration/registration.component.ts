@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {RegistrationService} from './registration.service';
 
 @Component({
   selector: 'registration-root',
@@ -8,8 +9,23 @@ import { Component } from '@angular/core';
 
 export class RegistrationComponent {
 
-    Registerclick(){
+    email
+    password
+    confirmpassword
 
+    constructor(private registrationService: RegistrationService){
+
+    }
+
+    confirmclick(){
+        this.registrationService.checklogin(this.email)
+        console.log("this email is " + this.email)
+
+    }
+
+    confirmpassowrd(){
+        if (this.password === this.confirmpassword)
+        console.log ("passwords are the same")
     }
 
 
