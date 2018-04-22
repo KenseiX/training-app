@@ -16,7 +16,6 @@ export class LoginComponent {
     }
 
     loginclick(){
-        console.log("this is your email" + this.email)
         this.loginService.checklogin(this.email, this.password)
     }
 
