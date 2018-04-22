@@ -21,12 +21,19 @@ export class RegistrationComponent {
         this.registrationService.checklogin(this.email)
         console.log("this email is " + this.email)
 
-    }
-
-    confirmpassowrd(){
         if (this.password === this.confirmpassword)
         console.log ("passwords are the same")
+        else
+        console.log("passwords are not the same")
+
     }
 
+/*    passwordconfirm(){
+        if (this.password === this.confirmpassword)
+        console.log ("passwords are the same")
+        else
+        console.log("passwords are not the same")
+    }
+*/
 
 }
