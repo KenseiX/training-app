@@ -1,1 +1,10 @@
-<h1>Example Text</h1>
+
+<h3>Username</h3>
+<input type="text" name="username" [(ngModel)]="email">
+<br>
+<h3>password</h3>
+<input type="text" name="lastname" [(ngModel)]="password">
+<br>
+<button (click)="loginclick()">Log-in</button>
+<button (click)="registerclick()">Register</button>
+<button (click)="print()">print</button>{{email}} {{password}}
