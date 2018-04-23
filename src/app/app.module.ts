@@ -11,15 +11,23 @@ import { RegistrationComponent } from './registration/registration.component';
 import {RegistrationService} from './registration/registration.service';
 
 
+import { NgbdModalBasic } from './regmodal/regmodal.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    NgbdModalBasic
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    NgbModule.forRoot()
   ],
   providers: [LoginService, RegistrationService],
   bootstrap: [AppComponent]
