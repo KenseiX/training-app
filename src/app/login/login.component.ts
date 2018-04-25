@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import {LoginService} from './login.service';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
   selector: 'login-root',
@@ -16,17 +18,17 @@ export class LoginComponent {
     }
 
     loginclick(){
-        this.loginService.checklogin(this.email, this.password)
+        this.loginService.checklogin(this.email, this.password)      
     }
 
     registerclick(){
-        console.log("This is your password" + this.password)
+        
     }
 
 
-    print() {
+/*    print() {
         console.log(this.email)
         console.log(this.password)
-    }
+    }*/
 
 }
