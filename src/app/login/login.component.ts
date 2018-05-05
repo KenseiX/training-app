@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {LoginService} from './login.service';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
-
+import {RegistrationComponent} from './../registration/registration.component';
 
 @Component({
   selector: 'login-root',
@@ -13,7 +13,7 @@ export class LoginComponent {
     email
     password
 
-    constructor(private loginService: LoginService){
+    constructor(private loginService: LoginService, private modalService: NgbModal){
 
     }
 
@@ -22,7 +22,8 @@ export class LoginComponent {
     }
 
     registerclick(){
-        
+        const modalRef = this.modalService.open(RegistrationComponent);
+        modalRef.componentInstance.name = 'World';
     }
 
 

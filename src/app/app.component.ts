@@ -10,9 +10,7 @@ export class AppComponent {
   creatorname = 'Mark Skeath';
   counters = [];
 
-  changeName() {
-    this.creatorname = 'totally not mark';
-  }
+
 
   addLogin() {
     this.counters.push('');

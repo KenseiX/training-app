@@ -1,19 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import {RegistrationService} from './registration.service';
+import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  selector: 'registration-root',
+  selector: 'ngbd-modal-content',
   templateUrl: './registration.component.html',
   styleUrls: ['./registration.component.css']
 })
 
 export class RegistrationComponent {
-
+    @Input() name;
     email
     password
     confirmpassword
 
-    constructor(private registrationService: RegistrationService){
+    constructor(private registrationService: RegistrationService, public activeModal: NgbActiveModal){
 
     }
 
