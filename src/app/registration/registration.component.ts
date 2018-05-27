@@ -16,6 +16,7 @@ export class RegistrationComponent {
 
     constructor(private registrationService: RegistrationService, public activeModal: NgbActiveModal){
 
+        console.log("modal created ")
     }
 
     confirmclick(){
@@ -26,9 +27,14 @@ export class RegistrationComponent {
         console.log ("passwords are the same")
         else
         console.log("passwords are not the same")
-
+        //this.activeModal.close('Close click from confirm');
     }
 
+    cancel() {
+        this.activeModal.close('Close click from cancel');
+    }
+
+    //activeModal.close('Close click')
 /*    passwordconfirm(){
         if (this.password === this.confirmpassword)
         console.log ("passwords are the same")
