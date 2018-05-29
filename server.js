@@ -81,6 +81,30 @@ app.get("/api/:email/getLoginData",(req, res)=> {
 
 
 /* Edit - Updating a spec result */
+app.put("/api/:email/updateLoginData", (req, res) => {
+// var updateobject = req.body;
+
+var updateobject = {
+  "email" : "test@email.com",
+  "first_name" : "mark123",
+  "last_name" : "skeath123",
+  "password" : "testpass"
+}
+
+var email = req.params.email;
+
+console.dir(updateobject);
+
+console.log('hit updateLoginData/' + email);
+
+return loginData.findOneAndUpdate(
+  {email: email}, updateobject,
+  (err, doc) => {if (err) return res.send(500, {error: err})
+  return res.send(doc);
+});
+
+});
+
 
 /* Add - Creating a new result */
 
