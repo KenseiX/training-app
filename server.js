@@ -107,5 +107,23 @@ return loginData.findOneAndUpdate(
 
 
 /* Add - Creating a new result */
+app.post ("/api/:email/addLoginData", (req, res) => {
+var newlogin = new loginData(req.body);
+
+// newlogin.first_name = req.body.first_name;
+newlogin.email = req.params.email;
+
+newlogin.save()
+  .then(item =>{
+    res.send("item successfully saved");
+  
+  })
+  .catch(err =>{
+    res.status(400).send("unable to connect");
+  });
+
+});
+
+
 
 /* Delete - Removes one from the database */
