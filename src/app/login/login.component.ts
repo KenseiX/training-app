@@ -17,10 +17,12 @@ export class LoginComponent {
 
     }
 
+    //When the login button is clicked
     loginclick(){
         this.loginService.checklogin(this.email, this.password)      
     }
 
+    //When the Registration button is clicked
     registerclick(){
         const modalRef = this.modalService.open(RegistrationComponent);
         modalRef.componentInstance.name = 'World';
