@@ -83,14 +83,7 @@ app.get("/api/:email/getLoginData",(req, res)=> {
 
 /* Edit - Updating a specific result */
 app.put("/api/:email/updateLoginData", (req, res) => {
-// var updateobject = req.body;
-
-var updateobject = {
-  "email" : "test@email.com",
-  "first_name" : "mark123",
-  "last_name" : "skeath123",
-  "password" : "testpass"
-}
+var updateobject = req.body;
 
 var email = req.params.email;
 
@@ -109,11 +102,8 @@ return loginData.findOneAndUpdate(
 
 /* Add - Creating a new result */
 app.post ("/api/:email/addLoginData", (req, res) => {
-var newlogin = new loginData(req.body);
-
-// newlogin.first_name = req.body.first_name;
-newlogin.email = req.params.email;
-
+  
+var newlogin = new loginData();
 newlogin.save()
   .then(item =>{
     res.send("item successfully saved");

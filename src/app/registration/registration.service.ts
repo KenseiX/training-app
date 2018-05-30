@@ -46,8 +46,14 @@ export class RegistrationService{
 
 
 createlogin (data){
+    setTimeout(() => {
     console.dir(data);
-     //this.http.post(`/api/${email}/addLoginData`)
+        const x =  this.http.post(`/api/${data.email}/addLoginData`, data).map(res => res.json())
+        //.catch(err => this.handleError(err));
+
+        x.subscribe();
+        return x;
+    }, 200)
 
 };
 

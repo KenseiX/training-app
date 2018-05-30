@@ -30,7 +30,7 @@ export class RegistrationComponent {
         if (this.password === this.confirmpassword){
         console.log ("passwords are the same")
         let data = {email:this.email, first_name:this.first_name, last_name:this.last_name, password:this.password}
-        this.registrationService.createlogin(data);
+        this.registrationService.createlogin(data)// .subscribe(result => {
         }
         else
         {
