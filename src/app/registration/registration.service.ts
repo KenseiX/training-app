@@ -45,6 +45,13 @@ export class RegistrationService{
 
 
 
+createlogin (data){
+    console.dir(data);
+     //this.http.post(`/api/${email}/addLoginData`)
+
+};
+
+
     /*
     checklogin (email){
         if (email === this.dummyemail){

@@ -12,6 +12,8 @@ export class RegistrationComponent {
     @Input() name;
     email
     password
+    first_name
+    last_name
     confirmpassword
 
     constructor(private registrationService: RegistrationService, public activeModal: NgbActiveModal){
@@ -25,11 +27,16 @@ export class RegistrationComponent {
         this.registrationService.checklogin(this.email)
         console.log("this email is " + this.email)
 
-        if (this.password === this.confirmpassword)
+        if (this.password === this.confirmpassword){
         console.log ("passwords are the same")
+        let data = {email:this.email, first_name:this.first_name, last_name:this.last_name, password:this.password}
+        this.registrationService.createlogin(data);
+        }
         else
+        {
         console.log("passwords are not the same")
         window.alert("passwords are incorrect");
+        }
         //this.activeModal.close('Close click from confirm');
     }
 
