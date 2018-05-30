@@ -13,6 +13,8 @@ import {RegistrationService} from './registration/registration.service';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
+import {HttpModule, Http, RequestOptions, JsonpModule} from '@angular/http';
+
 
 
 
@@ -25,7 +27,9 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
   imports: [
     BrowserModule,
     FormsModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    HttpModule,
+    JsonpModule
   ],
   entryComponents: [
     RegistrationComponent,

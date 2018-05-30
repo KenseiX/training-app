@@ -24,7 +24,7 @@ export class LoginComponent {
 
     //When the Registration button is clicked
     registerclick(){
-        const modalRef = this.modalService.open(RegistrationComponent);
+        const modalRef = this.modalService.open(RegistrationComponent, { centered: true });
         modalRef.componentInstance.name = 'World';
     }
 

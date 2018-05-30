@@ -19,6 +19,8 @@ export class RegistrationComponent {
         console.log("modal created ")
     }
 
+
+    //Logic behind when the confirmation button is clicked
     confirmclick(){
         this.registrationService.checklogin(this.email)
         console.log("this email is " + this.email)
@@ -27,9 +29,11 @@ export class RegistrationComponent {
         console.log ("passwords are the same")
         else
         console.log("passwords are not the same")
+        window.alert("passwords are incorrect");
         //this.activeModal.close('Close click from confirm');
     }
 
+    //Logic for the cancel button
     cancel() {
         this.activeModal.close('Close click from cancel');
     }

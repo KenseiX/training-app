@@ -57,12 +57,13 @@ var loginData = mongoose.model('Auth', loginSchema, "Auth");
 
 
 //data api end points
+
 //test to see does api exist
 app.get('/api', (req, res) => {
 res.json(200, {msg: 'OK -- Loading api endpoint'});
 });
 
-//This pulls back all login data using for tesing, not for production
+//This pulls back all login data using for tesing
 /* Browse - Broswers all content */
 app.get("/api/getLoginData", (req, res) => {
   loginData.find(function (err, data) {
@@ -71,7 +72,7 @@ app.get("/api/getLoginData", (req, res) => {
 });
 
 
-/* Read - Views a specafic Result */
+/* Read - Views a specific Result */
 app.get("/api/:email/getLoginData",(req, res)=> {
   var email = req.params.email;
   loginData.findOne({email:email}, function (err, data) {
@@ -80,7 +81,7 @@ app.get("/api/:email/getLoginData",(req, res)=> {
 });
 
 
-/* Edit - Updating a spec result */
+/* Edit - Updating a specific result */
 app.put("/api/:email/updateLoginData", (req, res) => {
 // var updateobject = req.body;
 
@@ -125,5 +126,13 @@ newlogin.save()
 });
 
 
+/* Delete - Removes one result from the database */
+app.delete("/api/:email/deleteLoginData", (req, res) => {
+  var email = req.params.email;
 
-/* Delete - Removes one from the database */
+  loginData.findOneAndRemove({email: email}, (err, data) => {
+    if (err) return res.send(500, {error: err})
+    return res.send(data);
+  })
+
+});

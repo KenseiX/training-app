@@ -1,12 +1,18 @@
 <!--Html content for the login screen-->
+
 <div class="content">
-<h3>Username</h3>
-<input type="text" name="username" [(ngModel)]="email">
-<br>
-<h3>password</h3>
-<input type="text" name="lastname" [(ngModel)]="password">
-<br>
-<br>
-<button (click)="loginclick()">Log-in</button>
-<button (click)="registerclick()">Register</button>
+    <h1>
+        Welcome to Hockey app
+    </h1>
+    <img width="300" alt="Angular Logo" src="/assets/images/hockey_cross.jpg">
+
+    <h3>Username</h3>
+    <input type="text" name="username" [(ngModel)]="email">
+    <br>
+    <h3>password</h3>
+    <input type="text" name="lastname"  [(ngModel)]="password">
+    <br>
+    <br>
+    <button (click)="loginclick()">Log-in</button>
+    <button (click)="registerclick()">Register</button>
 </div>

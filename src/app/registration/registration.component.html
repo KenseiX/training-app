@@ -1,9 +1,14 @@
+<!--Html content for content of the model with the registration button is pressed-->
+
+<!--Content for the header of the model-->
 <div class="modal-header">
     <h4 class="modal-title">Registration</h4>
     <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
+
+  <!--Content for the main body of the model-->
   <div class="modal-body">
     <h3>Enter Email</h3>
     <input type="text" name="enteremail" [(ngModel)]="email">
@@ -15,12 +20,14 @@
     <input type="text" name="lastname">
     <br>
     <h3>Enter Password</h3>
-    <input type="text" name="enterpassword"[(ngModel)]="password">
+    <input type="text" name="enterpassword" [(ngModel)]="password">
     <br>
     <h3>Confirm Password</h3>
     <input type="text" name="confirmpassword"[(ngModel)]="confirmpassword">
     <br>
   </div>
+
+  <!--Content for the footer of the modal-->
   <div class="modal-footer">
     <button type="button" class="btn btn-outline-dark" (click)="cancel()">Cancel</button>
     <button type="button" class="btn btn-outline-dark" (click)="confirmclick()">Confirm</button>
