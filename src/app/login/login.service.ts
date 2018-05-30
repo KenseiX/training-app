@@ -2,41 +2,43 @@ import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
 import {Observable} from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/mergeMap';
+import { mergeMap } from 'rxjs/operator/mergeMap';
 
 
 @Injectable()
 
 export class LoginService{
 
-    dummyemail = "test@email.com"
-    dummypassword = "testpass"
+    login;
 
     constructor (private http:Http){
     };
 
     checklogin (email, password){
-        this.getlogin (email);
+        this.getlogin(email);
+        
 
-        if (email === this.dummyemail && password === this.dummypassword){
-            console.log ("valid login hit")
-        }
-        else
-        console.log ("invalid login hit")
-        window.alert("Login details incorrect, please try again");
+        setTimeout(() => {
+            console.dir(this.login)
+            if (this.login && (email === this.login.email && password === this.login.password)){
+                console.log ("valid login hit")
+            }
+            else
+            {
+                console.log ("invalid login hit")
+                window.alert("Login details incorrect, please try again");
+            }
+        }, 100)
     }
 
 
     getlogin (email){
-
-        let test = {}
-
-        this.http.get(`api/${email}/getLoginData`).flatMap(data => {
-            console.log("Api hit");
-            console.dir(data);
-            return data.json();
+        // this.test = this.http.get(`api/${email}/getLoginData`).pipe(mergeMap(data ))
+        return this.http.get(`api/${email}/getLoginData`).subscribe(data => { 
+            this.login = data.json()
+            console.dir(this.login)
         });
-
-
     }
 
 }
